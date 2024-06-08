@@ -8,21 +8,21 @@ public class P1Solution {
 
     public static void main(String[] args) {
         P1Solution solution = new P1Solution();
-        int[] sum = solution.twoSum(new int[]{2, 7, 11, 15}, 26);
-        System.out.println(Arrays.toString(sum));
+        System.out.println(Arrays.toString(solution.twoSumUsingTwoForLoop(new int[]{2, 7, 11, 15}, 26)));
+        System.out.println(Arrays.toString(solution.twoSum(new int[]{2, 7, 11, 15}, 26)));
     }
 
     // O(n^2)
-//    public int[] twoSum(int[] nums, int target) {
-//        for (int i = 0; i < nums.length - 1; i++) {
-//            for (int j = i + 1; j < nums.length - 1; j++) {
-//                if (nums[i] + nums[j] == target) {
-//                    return new int[]{i, j};
-//                }
-//            }
-//        }
-//        return new int[]{-1, -1};
-//    }
+    public int[] twoSumUsingTwoForLoop(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length - 1; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{-1, -1};
+    }
 
     // O(n)
     public int[] twoSum(int[] nums, int target) {
